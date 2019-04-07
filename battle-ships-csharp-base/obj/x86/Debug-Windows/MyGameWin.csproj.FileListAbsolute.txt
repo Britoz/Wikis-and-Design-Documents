@@ -25,3 +25,7 @@ H:\Labs\2018\BB\GameTemplate\bin\Debug\SwinGame.dll
 H:\Labs\2018\BB\GameTemplate\obj\x86\Debug-Windows\MyGameWin.csprojResolveAssemblyReference.cache
 H:\Labs\2018\BB\GameTemplate\obj\x86\Debug-Windows\MyGame.exe
 H:\Labs\2018\BB\GameTemplate\obj\x86\Debug-Windows\MyGame.pdb
+D:\swinburne\year 3\sem 1\Dev project 1\week 5\Battle-ships\battle-ships-csharp-base\bin\Debug\MyGame.exe.config
+D:\swinburne\year 3\sem 1\Dev project 1\week 5\Battle-ships\battle-ships-csharp-base\obj\x86\Debug-Windows\MyGame.exe
+D:\swinburne\year 3\sem 1\Dev project 1\week 5\Battle-ships\battle-ships-csharp-base\obj\x86\Debug-Windows\MyGame.pdb
+D:\swinburne\year 3\sem 1\Dev project 1\week 5\Battle-ships\battle-ships-csharp-base\obj\x86\Debug-Windows\MyGameWin.csprojResolveAssemblyReference.cache
