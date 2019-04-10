@@ -9,10 +9,6 @@ namespace MyGame.src.Model
     /// The ISeaGrid defines the read only interface of a Grid. This
     /// allows each player to see and attack their opponents grid.
     /// </summary>
-    /// <summary>
-    /// The ISeaGrid defines the read only interface of a Grid. This
-    /// allows each player to see and attack their opponents grid.
-    /// </summary>
     public interface ISeaGrid
     {
 
@@ -24,7 +20,6 @@ namespace MyGame.src.Model
         /// Indicates that the grid has changed.
         /// </summary>
         // Event Changed As EventHandler VBConversions Warning: events in interfaces not supported in C#.
-
         /// <summary>
         /// Provides access to the given row/column
         /// </summary>

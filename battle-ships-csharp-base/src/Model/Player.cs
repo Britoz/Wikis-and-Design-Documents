@@ -6,13 +6,9 @@ using System.Text;
 
 namespace MyGame.src.Model
 {
-    // '' <summary>
-    // '' Player has its own _PlayerGrid, and can see an _EnemyGrid, it can also check if
-    // '' all ships are deployed and if all ships are detroyed. A Player can also attach.
-    // '' </summary>
     /// <summary>
     /// Player has its own _PlayerGrid, and can see an _EnemyGrid, it can also check if
-    /// all ships are deployed and if all ships are detroyed. A Player can also attach.
+    /// all ships are deployed and if all ships are destroyed. A Player can also attach.
     /// </summary>
     public class Player : IEnumerable<Ship>
     {
@@ -76,7 +72,7 @@ namespace MyGame.src.Model
         }
 
         /// <summary>
-        /// The EnemyGrid is a ISeaGrid because you shouldn't be allowed to see the enemies ships
+        /// The EnemyGrid is an ISeaGrid as the player shouldn't be able to see enemy ships
         /// </summary>
         public ISeaGrid EnemyGrid
         {
@@ -91,7 +87,7 @@ namespace MyGame.src.Model
         }
 
         /// <summary>
-        /// The PlayerGrid is just a normal SeaGrid where the players ships can be deployed and seen
+        /// The PlayerGrid is a normal SeaGrid where the players ships can be deployed and seen
         /// </summary>
         public SeaGrid PlayerGrid
         {
@@ -102,7 +98,7 @@ namespace MyGame.src.Model
         }
 
         /// <summary>
-        /// ReadyToDeploy returns true if all ships are deployed
+        /// ReadyToDeploy returns true if all ships are deployed i.e all ships have been chosen and put onto the grid
         /// </summary>
         public bool ReadyToDeploy
         {
@@ -122,7 +118,7 @@ namespace MyGame.src.Model
         }
 
         /// <summary>
-        /// Returns the Player's ship with the given name.
+        /// Returns the Player's ship with its given name.
         /// </summary>
         /// <param name="name">the name of the ship to return</param>
         /// <value>The ship</value>
@@ -134,7 +130,7 @@ namespace MyGame.src.Model
             {
                 return null;
             }
-            
+
             return _Ships[name];
         }
 
@@ -160,7 +156,7 @@ namespace MyGame.src.Model
         }
 
         /// <summary>
-        /// Total number of shots that missed
+        /// Total number of shots that the player has missed
         /// </summary>
         /// <value>miss count</value>
         /// <returns>the number of shots that have missed ships</returns>
@@ -188,8 +184,7 @@ namespace MyGame.src.Model
         }
 
         /// <summary>
-        /// Makes it possible to enumerate over the ships the player
-        /// has.
+        /// Makes it possible to enumerate over the ships the player has
         /// </summary>
         /// <returns>A Ship enumerator</returns>
         public IEnumerator<Ship> GetEnumerator()
@@ -208,8 +203,7 @@ namespace MyGame.src.Model
         }
 
         /// <summary>
-        /// Makes it possible to enumerate over the ships the player
-        /// has.
+        /// Makes it possible to enumerate over the ships the player has.
         /// </summary>
         /// <returns>A Ship enumerator</returns>
         IEnumerator IEnumerable.GetEnumerator()
