@@ -146,7 +146,7 @@ namespace MyGame.src.Model
 
         /// <summary>
         /// Shoot allows a tile to be shot at, and if the tile has been hit before
-        /// it will give an error
+        /// it will give an error message
         /// </summary>
         internal void Shoot()
         {

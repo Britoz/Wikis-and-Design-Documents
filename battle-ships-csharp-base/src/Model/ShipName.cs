@@ -5,6 +5,9 @@ using System.Text;
 
 namespace MyGame.src.Model
 {
+  /// <summary>
+  /// Different ship names
+  /// </summary>
     public enum ShipName
     {
         None = 0,

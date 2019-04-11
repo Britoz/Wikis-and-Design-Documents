@@ -11,27 +11,27 @@ namespace MyGame.src.Model
     public enum ResultOfAttack
     {
         /// <summary>
-        /// The player hit something
+        /// The player hit something.
         /// </summary>
         Hit,
 
         /// <summary>
-        /// The player missed
+        /// The player missed.
         /// </summary>
         Miss,
 
         /// <summary>
-        /// The player destroyed a ship
+        /// The player destroyed a ship.
         /// </summary>
         Destroyed,
 
         /// <summary>
-        /// That location was already shot.
+        /// That location has already been shot at.
         /// </summary>
         ShotAlready,
 
         /// <summary>
-        /// The player killed all of the opponents ships
+        /// The player killed all of the opponents ships.
         /// </summary>
         GameOver
     }
