@@ -17,11 +17,10 @@
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="MyGame" expanded="True">
+          <Node name="MyGame" expanded="True" selected="True">
             <Node name="MyGame" expanded="True">
               <Node name="src" expanded="True">
                 <Node name="Model" expanded="True" />
-                <Node name="GameController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
