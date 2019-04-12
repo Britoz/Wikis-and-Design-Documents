@@ -62,6 +62,7 @@ namespace MyGame
             _deploy = new DeploymentController ();
             _discover = new DiscoveryController ();
             _score = new HighScoreController ();
+            _menu = new MenuController();
         }
         
         // '' <summary>
