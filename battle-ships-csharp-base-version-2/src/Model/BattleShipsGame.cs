@@ -106,8 +106,8 @@ namespace MyGame
                 newAttack = new AttackResult(ResultOfAttack.GameOver, newAttack.Ship, newAttack.Text, row, col);
             }
 
-            if (AttackCompletedEvent != null)
-                AttackCompletedEvent(this, newAttack);
+            AttackCompleted(this, newAttack);
+
 
             //change player if the last hit was a miss
             if (newAttack.Value == ResultOfAttack.Miss)

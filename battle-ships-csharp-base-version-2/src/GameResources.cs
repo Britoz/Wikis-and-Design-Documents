@@ -177,7 +177,7 @@ namespace MyGame
             int BG_X = 279;
             int fullW;
             Rectangle toDraw = new Rectangle();
-            fullW = (260 * number);
+            fullW = System.Convert.ToInt32(260 * number / STEPS);
             //STEPS;
             SwinGame.DrawBitmap(_LoaderEmpty, BG_X, BG_Y);
             SwinGame.DrawCell(_LoaderFull, 0, BG_X, BG_Y);

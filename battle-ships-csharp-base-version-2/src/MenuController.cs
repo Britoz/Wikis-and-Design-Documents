@@ -8,11 +8,14 @@ namespace MyGame
     // '' from the menus in the game. These include the main menu, game
     // '' menu and the settings m,enu.
     // '' </summary>
-    class MenuController : UtilityFunctions
+     class MenuController : UtilityFunctions
      {
-        
-        private string[] _menuStructure;
-        
+
+        private readonly static string[][] _menuStructure = new string[][] {
+            new string[] {"PLAY", "SETUP", "SCORES", "QUIT"},
+                new string[] {"RETURN", "SURRENDER", "QUIT"},
+                new string[] {"EASY", "MEDIUM", "HARD"}};
+
         private const int MENU_TOP = 575;
         
         private const int MENU_LEFT = 30;
