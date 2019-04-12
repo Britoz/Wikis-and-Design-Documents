@@ -5,12 +5,6 @@ using System.Text;
 
 namespace MyGame.src.Model
 {
-    // '' <summary>
-    // '' The BattleShipsGame controls a big part of the game. It will add the two players
-    // '' to the game and make sure that both players ships are all deployed before starting the game.
-    // '' It also allows players to shoot and swap turns between player. It will also check if players 
-    // '' are destroyed.
-    // '' </summary>
     /// <summary>
     /// The BattleShipsGame controls a big part of the game. It will add the two players
     /// to the game and make sure that both players ships are all deployed before starting the game.
@@ -32,7 +26,7 @@ namespace MyGame.src.Model
         /// The AttackCompleted event is raised when an attack has completed.
         /// </summary>
         /// <remarks>
-        /// This is used by the UI to play sound effects etc.
+        /// This is used by the UI to play sound effects, creates better user interaction etc.
         /// </remarks>
         public AttackCompletedHandler AttackCompletedEvent;
         public event AttackCompletedHandler AttackCompleted;

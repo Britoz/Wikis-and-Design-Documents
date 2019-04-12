@@ -7,7 +7,7 @@ using System.Text;
 namespace MyGame.src.Model
 {
     /// <summary>
-/// The AIPlayer is a type of player. It can readomly deploy ships, it also has the
+/// The AIPlayer is a type of player. It can readonly deploy ships, it also has the
 /// functionality to generate coordinates and shoot at tiles
 /// </summary>
 public abstract class AIPlayer : Player
@@ -72,7 +72,7 @@ public abstract class AIPlayer : Player
 		/// </summary>
 		/// <param name="this">location 1</param>
 		/// <param name="other">location 2</param>
-		/// <returns>true if location 1 and location 2 are at the same spot</returns>
+		/// <returns>true if location 1 and location 2  of the ships are at the same spot.s</returns>
 		public static bool operator ==(Location @this, Location other)
 		{
 			return @this != null && other != null && @this.Row == other.Row && @this.Column == other.Column;
@@ -83,7 +83,7 @@ public abstract class AIPlayer : Player
 		/// </summary>
 		/// <param name="this">location 1</param>
 		/// <param name="other">location 2</param>
-		/// <returns>true if location 1 and location 2 are not at the same spot</returns>
+		/// <returns>true if location 1 and location 2 of the ships are not at the same spot</returns>
 		public static bool operator !=(Location @this, Location other)
 		{
 			return ReferenceEquals(@this, null) || ReferenceEquals(other, null) || @this.Row != other.Row || @this.Column != other.Column;
@@ -121,7 +121,7 @@ public abstract class AIPlayer : Player
 		int row = 0;
 		int column = 0;
 		
-		do //keep hitting until a miss
+		do //keep hitting until it misses
 		{
 			Delay();
 			

@@ -56,7 +56,7 @@ namespace MyGame.src.Model
 
             /// <summary>
             /// If source shot and shootat shot are on the same row then
-            /// give a boolean true
+            /// return a boolean true
             /// </summary>
             public bool SameRow
             {
@@ -68,7 +68,7 @@ namespace MyGame.src.Model
 
             /// <summary>
             /// If source shot and shootat shot are on the same column then
-            /// give a boolean true
+            /// return a boolean true
             /// </summary>
             public bool SameColumn
             {
