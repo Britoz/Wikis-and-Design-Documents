@@ -10,7 +10,7 @@ namespace MyGame
 {
     public class GameController : GameResources
     {
-        
+        //
         private BattleShipsGame _theGame;
         
         private Player _human;
@@ -32,8 +32,8 @@ namespace MyGame
         // '' Returns the current state of the game, indicating which screen is
         // '' currently being used
         // '' </summary>
-        // '' <value>The current state</value>
-        // '' <returns>The current state</returns>
+        // '' <value>The GameState state</value>
+        // '' <returns>The state peek</returns>
         public GameState CurrentState {
             get {
                 return _state.Peek();
@@ -94,10 +94,6 @@ namespace MyGame
                 _theGame.AttackCompleted += AttackCompleted;
                AddNewState(GameState.Deploying);
             }
-            
-            // '' <summary>
-            // '' Stops listening to the old game once a new game is started
-            // '' </summary>
         }
         
         public void EndGame() {
@@ -138,7 +134,7 @@ namespace MyGame
         // '' <summary>
         // '' Listens for attacks to be completed.
         // '' </summary>
-        // '' <param name="sender">the game</param>
+        // '' <param name="sender">the object</param>
         // '' <param name="result">the result of the attack</param>
         // '' <remarks>
         // '' Displays a message, plays sound and redraws the screen
@@ -322,8 +318,8 @@ namespace MyGame
         }
         
         // '' <summary>
-        // '' Move the game to a new state. The current state is maintained
-        // '' so that it can be returned to.
+        // '' Move the game to a new state.
+        // '' Give a function message.
         // '' </summary>
         // '' <param name="state">the new game state</param>
         public void AddNewState(GameState state) {
@@ -341,7 +337,7 @@ namespace MyGame
         }
         
         // '' <summary>
-        // '' Ends the current state, returning to the prior state
+        // '' Pop the current state
         // '' </summary>
         public void EndCurrentState() {
             _state.Pop();

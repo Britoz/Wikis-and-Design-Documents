@@ -12,7 +12,7 @@ namespace MyGame
     // '' </summary>
     class DeploymentController : UtilityFunctions
     {
-        
+        //
         private const int SHIPS_TOP = 98;
         
         private const int SHIPS_LEFT = 20;
@@ -46,7 +46,7 @@ namespace MyGame
         private ShipName _selectedShip = ShipName.Tug;
         
         // '' <summary>
-        // '' Handles user input for the Deployment phase of the game.
+        // '' Handles use input for the Deployment phase of the game.
         // '' </summary>
         // '' <remarks>
         // '' Involves selecting the ships, deloying ships, changing the direction
