@@ -12,7 +12,7 @@ namespace MyGame
     // '' </summary>
     class DeploymentController : UtilityFunctions
     {
-        
+        //
         private const int SHIPS_TOP = 98;
         
         private const int SHIPS_LEFT = 20;

@@ -10,7 +10,7 @@ namespace MyGame
 {
     public class GameController : GameResources
     {
-        
+        //
         private BattleShipsGame _theGame;
         
         private Player _human;
