@@ -45,8 +45,11 @@ namespace MyGame
             }
         }
         
-        private List<Score> _Scores = new List<Score>();
-        
+	/*
+	  Creating a list of Score that is only used inside this class
+          Then, loading score and add that score into the list of Score
+	*/
+	private List<Score> _Scores = new List<Score>();
         private void LoadScores() {
             string filename;
             filename = SwinGame.PathToResource("highscores.txt");

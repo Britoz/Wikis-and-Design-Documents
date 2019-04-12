@@ -6,7 +6,7 @@ namespace MyGame
 {
     public class GameResources
     {
-        
+       	//Loading all available fonts for the game 
         private void LoadFonts() {
             NewFont("ArialLarge", "arial.ttf", 80);
             NewFont("Courier", "cour.ttf", 14);
@@ -14,6 +14,7 @@ namespace MyGame
             NewFont("Menu", "ffaccess.ttf", 8);
         }
         
+	//Loading all available images for the game
         private void LoadImages() {
             // Backgrounds
             NewImage("Menu", "main_page.jpg");
@@ -39,6 +40,7 @@ namespace MyGame
             NewImage("Splash", "splash.png");
         }
         
+	//Loading all available sounds for the game
         private void LoadSounds() {
             NewSound("Error", "error.wav");
             NewSound("Hit", "hit.wav");
@@ -49,6 +51,7 @@ namespace MyGame
             NewSound("Lose", "lose.wav");
         }
         
+	//Loading all available mp3 files for the game
         private void LoadMusic() {
             NewMusic("Background", "horrordrone.mp3");
         }
@@ -56,7 +59,7 @@ namespace MyGame
         // '' <summary>
         // '' Gets a Font Loaded in the Resources
         // '' </summary>
-        // '' <param name="font">Name of Font</param>
+        // '' Parameter: Name of Font (String)
         // '' <returns>The Font Loaded with this Name</returns>
         public Font GameFont(string font) {
             return _Fonts[font];
@@ -65,7 +68,7 @@ namespace MyGame
         // '' <summary>
         // '' Gets an Image loaded in the Resources
         // '' </summary>
-        // '' <param name="image">Name of image</param>
+        // '' Parameter: Name of image (String)
         // '' <returns>The image loaded with this name</returns>
         public Bitmap GameImage(string image) {
             return _Images[image];
@@ -74,7 +77,7 @@ namespace MyGame
         // '' <summary>
         // '' Gets an sound loaded in the Resources
         // '' </summary>
-        // '' <param name="sound">Name of sound</param>
+        // '' Parameter: Name of sound (String)
         // '' <returns>The sound with this name</returns>
         public SoundEffect GameSound(string sound) {
             return _Sounds[sound];
@@ -83,30 +86,22 @@ namespace MyGame
         // '' <summary>
         // '' Gets the music loaded in the Resources
         // '' </summary>
-        // '' <param name="music">Name of music</param>
+        // '' Parameter: Name of the music (String)
         // '' <returns>The music with this name</returns>
         public Music GameMusic(string music) {
             return _Music[music];
         }
         
+	//List of all private variable which is only used for this class
         private Dictionary<string, Bitmap> _Images = new Dictionary<string, Bitmap>();
-        
         private Dictionary<string, Font> _Fonts = new Dictionary<string, Font>();
-        
         private Dictionary<string, SoundEffect> _Sounds = new Dictionary<string, SoundEffect>();
-        
         private Dictionary<string, Music> _Music = new Dictionary<string, Music>();
-        
         private Bitmap _Background;
-        
         private Bitmap _Animation;
-        
         private Bitmap _LoaderFull;
-        
         private Bitmap _LoaderEmpty;
-        
         private Font _LoadingFont;
-        
         private SoundEffect _StartSound;
         
         // '' <summary>
@@ -138,6 +133,7 @@ namespace MyGame
             EndLoadingScreen(width, height);
         }
         
+	//Display the loading screen while loading all resources for the game
         private void ShowLoadingScreen() {
             _Background = SwinGame.LoadBitmap(SwinGame.PathToResource("SplashBack.png", ResourceKind.BitmapResource));
             SwinGame.DrawBitmap(_Background, 0, 0);
@@ -151,6 +147,7 @@ namespace MyGame
             PlaySwinGameIntro();
         }
         
+	//Loading the introduction of the game in the first 4 seconds
         private void PlaySwinGameIntro() {
             const int ANI_CELL_COUNT = 11;
             Audio.PlaySoundEffect(_StartSound);
@@ -167,6 +164,7 @@ namespace MyGame
             SwinGame.Delay(1500);
         }
         
+	//Display the message inside some particular shapes
         private void ShowMessage(string message, int number) {
             const int BG_Y = 453;
             int TX = 310;
@@ -192,6 +190,7 @@ namespace MyGame
             SwinGame.ProcessEvents();
         }
         
+	//Display the ending screen in 0.5 second
         private void EndLoadingScreen(int width, int height) {
             SwinGame.ProcessEvents();
             SwinGame.Delay(500);
@@ -206,30 +205,37 @@ namespace MyGame
             SwinGame.ChangeScreenSize(width, height);
         }
         
+	//Adding the new font to the list of Fonts
         private void NewFont(string fontName, string filename, int size) {
             _Fonts.Add(fontName, SwinGame.LoadFont(SwinGame.PathToResource(filename, ResourceKind.FontResource), size));
         }
         
+	//Adding the new image to the list of Images
         private void NewImage(string imageName, string filename) {
             _Images.Add(imageName, SwinGame.LoadBitmap(SwinGame.PathToResource(filename, ResourceKind.BitmapResource)));
         }
         
+	//Adding the transparent color for the list of Images
         private void NewTransparentColorImage(string imageName, string fileName, Color transColor) {
             _Images.Add(imageName, SwinGame.LoadBitmap(SwinGame.PathToResource(fileName, ResourceKind.BitmapResource)));
         }
         
+	//Calling the NewTransparentColorImage method
         private void NewTransparentColourImage(string imageName, string fileName, Color transColor) {
             NewTransparentColorImage(imageName, fileName, transColor);
         }
-        
+
+	//Adding the new sound to the list of Sounds        
         private void NewSound(string soundName, string filename) {
             _Sounds.Add(soundName, Audio.LoadSoundEffect(SwinGame.PathToResource(filename, ResourceKind.SoundResource)));
         }
         
+	//Adding the new mp3 file to the list of Music
         private void NewMusic(string musicName, string filename) {
             _Music.Add(musicName, Audio.LoadMusic(SwinGame.PathToResource(filename, ResourceKind.SoundResource)));
         }
         
+	//Getting the available font in SwinGame, based on the list Values of Fonts
         private void FreeFonts() {
             foreach (Font obj in _Fonts.Values) {
                 SwinGame.FreeFont(obj);
@@ -237,6 +243,7 @@ namespace MyGame
             
         }
         
+	//Getting the available images in SwinGame, based on the list Values of Images
         private void FreeImages() {
             foreach (Bitmap obj in _Images.Values) {
                 SwinGame.FreeBitmap(obj);
@@ -244,6 +251,7 @@ namespace MyGame
             
         }
         
+	//Getting the available sound in SwinGame, based on the list Values of Sounds
         private void FreeSounds() {
             foreach (SoundEffect obj in _Sounds.Values) {
                 Audio.FreeSoundEffect(obj);
@@ -251,6 +259,7 @@ namespace MyGame
             
         }
         
+	//Getting the available music in SwinGame, based on the list Values of Music
         private void FreeMusic() {
             foreach (Music obj in _Music.Values) {
                 Audio.FreeMusic(obj);
@@ -258,6 +267,7 @@ namespace MyGame
             
         }
         
+	//Getting all available resources in Swinburne, based on the list of each resouce
         public void FreeResources() {
             FreeFonts();
             FreeImages();
