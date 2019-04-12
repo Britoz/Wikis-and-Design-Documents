@@ -11,12 +11,12 @@ namespace MyGame.src.Model
     public enum Direction
     {
         /// <summary>
-        /// The ship is oriented left/right
+        /// The ship is oriented either left/right.
         /// </summary>
         LeftRight,
 
         /// <summary>
-        /// The ship is oriented up/down
+        /// The ship is oriented either up/down.
         /// </summary>
         UpDown
     }

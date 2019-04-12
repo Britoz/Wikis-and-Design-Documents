@@ -94,7 +94,7 @@ namespace MyGame.src.Model
         /// <summary>
         /// Set the _Value to the PossibleAttack value, and the _Ship to the ship
         /// </summary>
-        /// <param name="value">either hit, miss, destroyed, shotalready</param>
+        /// <param name="value">either hit, miss, destroyed, shotalready.</param>
         /// <param name="ship">the ship information</param>
         public AttackResult(ResultOfAttack value, Ship ship, string text, int row, int column) : this(value, text, row, column)
         {
@@ -102,9 +102,9 @@ namespace MyGame.src.Model
         }
 
         /// <summary>
-        /// Displays the textual information about the attack
+        /// Displays the textual information about the attack on the ship
         /// </summary>
-        /// <returns>The textual information about the attack</returns>
+        /// <returns>The textual information about the attack on the ship</returns>
         public override string ToString()
         {
             if (ReferenceEquals(_Ship, null))

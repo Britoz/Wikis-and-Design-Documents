@@ -93,7 +93,7 @@ namespace MyGame.src.Model
         /// </summary>
         /// <param name="row">the row it needs to process</param>
         /// <param name="col">the column it needs to process</param>
-        /// <param name="result">the result og the last shot (should be hit)</param>
+        /// <param name="result">the result of the last shot (should be hit)</param>
         protected override void ProcessShot(int row, int col, AttackResult result)
         {
 

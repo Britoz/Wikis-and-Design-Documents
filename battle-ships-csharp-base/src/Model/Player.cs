@@ -54,7 +54,6 @@ namespace MyGame.src.Model
 
         public Player(BattleShipsGame controller)
         {
-            // VBConversions Note: Non-static class variable initialization is below.  Class variables cannot be initially assigned non-static values in C#.
             _playerGrid = new SeaGrid(_Ships);
 
             _game = controller;
