@@ -282,16 +282,19 @@ namespace MyGame
             SwinGame.DrawFramerate(675, 585);
         }
         
+	//2 Methods below aim to call AddAnimation method which support the game display animation
         public void AddExplosion(int row, int col) {
             AddAnimation(row, col, "Splash");
         }
-        
         public void AddSplash(int row, int col) {
             AddAnimation(row, col, "Splash");
         }
         
+	/*
+	  Creaing the list of Animations
+	  Then, Adding animation to this list and call the methods above to run it
+	*/
         private List<Sprite> _Animations = new List<Sprite>();
-        
         private void AddAnimation(int row, int col, string image) {
             Sprite s;
             Bitmap imgObj;
@@ -310,6 +313,7 @@ namespace MyGame
             _Animations.Add(s);
         }
         
+	//Update animations in the list of Animations
         public void UpdateAnimations() {
             List<Sprite> ended = new List<Sprite>();
             foreach (Sprite s in _Animations) {
@@ -327,6 +331,7 @@ namespace MyGame
             
         }
         
+	//Draw each animation in the list of Animations
         public void DrawAnimations() {
             foreach (Sprite s in _Animations) {
                 SwinGame.DrawSprite(s);
@@ -334,6 +339,7 @@ namespace MyGame
             
         }
         
+	//Draw each animation, based on its sequence
         public void DrawAnimationSequence() {
             int i;
             for (i = 1; (i <= (ANIMATION_CELLS * FRAMES_PER_CELL)); i++) {
