@@ -11,7 +11,7 @@ static class GameLogic
 	public static void Main()
 	{
 		//Opens a new Graphics Window
-		SwinGame.OpenGraphicsWindow("Battle Ships", 1600, 1200);
+		SwinGame.OpenGraphicsWindow("Battle Ships", 800, 600);
 
 		//Load Resources
 		GameResources.LoadResources();
