@@ -16,7 +16,8 @@ using SwinGameSDK;
 /// </remarks>
 static class HighScoreController
 {
-	private const int NAME_WIDTH = 3;
+    //increased width to 4
+	private const int NAME_WIDTH = 4;
 
 	private const int SCORES_LEFT = 490;
 	/// <summary>
@@ -199,6 +200,7 @@ static class HighScoreController
 			_Scores.RemoveAt(_Scores.Count - 1);
 			_Scores.Add(s);
 			_Scores.Sort();
+
             SaveScores();
 
 			GameController.EndCurrentState();
