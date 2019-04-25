@@ -163,10 +163,10 @@ public static class GameController
 			{
 				UtilityFunctions.Message = "You " + result.ToString();
 			}
-			
-			
+
+
 		} else {
-			
+
 			if(result.ToString().Equals("missed"))
 			{
 				UtilityFunctions.Message = "The AI " + result.ToString() + "                Its Your turn now!";
@@ -204,15 +204,15 @@ public static class GameController
 				break;
 			case ResultOfAttack.Miss:
 				PlayMissSequence(result.Row, result.Column, isHuman);
-				
-				switch (_aiSetting) 
+
+				switch (_aiSetting)
 				{
 					case AIOption.Easy:
 						UtilityFunctions.DrawField(GameController.ComputerPlayer.PlayerGrid, GameController.ComputerPlayer, true);
 					break;
 				}
-				
-				
+
+
 				break;
 			case ResultOfAttack.ShotAlready:
 				Audio.PlaySoundEffect(GameResources.GameSound("Error"));
@@ -319,7 +319,8 @@ public static class GameController
 				EndingGameController.HandleEndOfGameInput();
 				break;
 			case GameState.ViewingHighScores:
-				HighScoreController.HandleHighScoreInput();
+				MenuController.HandleScoreMenuInput();
+				//HighScoreController.HandleHighScoreInput();
 				break;
 		}
 
@@ -357,6 +358,7 @@ public static class GameController
 				break;
 			case GameState.ViewingHighScores:
 				HighScoreController.DrawHighScores();
+				MenuController.DrawScores();
 				break;
 		}
 

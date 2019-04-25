@@ -55,7 +55,7 @@ static class HighScoreController
 	/// The format is
 	/// # of scores
 	/// NNNSSS
-	/// 
+	///
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
 	private static void LoadScores()
@@ -94,7 +94,7 @@ static class HighScoreController
 	/// The format is
 	/// # of scores
 	/// NNNSSS
-	/// 
+	///
 	/// Where NNN is the name and SSS is the score
 	/// </remarks>
 	private static void SaveScores()
@@ -143,7 +143,7 @@ static class HighScoreController
 			}
 		}
 	}
-	
+
 	public static void DrawPlayAgainButton()
 	{
 		SwinGame.FillRectangle(Color.Black, 500, 450, 100,30);
@@ -154,12 +154,12 @@ static class HighScoreController
 	/// Handles the user input during the top score screen.
 	/// </summary>
 	/// <remarks></remarks>
-	public static void HandleHighScoreInput()
-	{
-		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
-			GameController.EndCurrentState();
-		}
-	}
+//	public static void HandleHighScoreInput()
+//	{
+//		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE) || SwinGame.KeyTyped(KeyCode.vk_RETURN)) {
+	//		GameController.EndCurrentState();
+//		}
+//	}
 
 	/// <summary>
 	/// Read the user's name for their highsSwinGame.
@@ -192,10 +192,10 @@ static class HighScoreController
 				SwinGame.ProcessEvents();
 
 				UtilityFunctions.DrawBackground();
-				
+
 				DrawHighScores();
 				DrawPlayAgainButton();
-				
+
 				SwinGame.DrawText("Name: ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
 				SwinGame.RefreshScreen();
 			}
@@ -205,7 +205,7 @@ static class HighScoreController
 			if (s.Name.Length < 3) {
 				s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
 			}
-			
+
 
 			_Scores.RemoveAt(_Scores.Count - 1);
 			_Scores.Add(s);

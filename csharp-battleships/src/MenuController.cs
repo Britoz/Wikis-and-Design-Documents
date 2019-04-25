@@ -185,6 +185,11 @@ static class MenuController
 		DrawButtons(SETUP_MENU, 1, 1);
 	}
 
+	public static void DrawScores()
+	{
+		DrawButtons(SCORE_MENU);
+	}
+
 	/// <summary>
 	/// Draw the buttons associated with a top level menu.
 	/// </summary>
