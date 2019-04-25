@@ -317,6 +317,7 @@ public static class GameController
 				break;
 			case GameState.EndingGame:
 				EndingGameController.HandleEndOfGameInput();
+				//MenuController.HandleScoreMenuInput();
 				break;
 			case GameState.ViewingHighScores:
 				MenuController.HandleScoreMenuInput();

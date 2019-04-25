@@ -40,7 +40,8 @@ static class MenuController
 			"HARD"
 		},
 		new string[] {
-			"RETURN",
+			"PLAY",
+			"RETURN"
 		}
 
 	};
@@ -58,7 +59,8 @@ static class MenuController
 	private const int SETUP_MENU = 2;
 
 	private const int SCORE_MENU = 3;
-	private const int SCORE_MENU_RETURN_BUTTON = 0;
+	private const int SCORE_MENU_PLAY_BUTTON = 0;
+	private const int SCORE_MENU_RETURN_BUTTON = 1;
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
@@ -185,6 +187,10 @@ static class MenuController
 		DrawButtons(SETUP_MENU, 1, 1);
 	}
 
+
+/// <summary>
+/// Draws the Scores menu to the screen.
+/// </summary>
 	public static void DrawScores()
 	{
 		DrawButtons(SCORE_MENU);
@@ -341,9 +347,17 @@ static class MenuController
 		}
 	}
 
+	/// <summary>
+	/// The score menu was clicked, perform the button's action.
+	/// </summary>
+	/// <param name="button">the button pressed</param>
 	private static void PerformScoreMenuAction(int button)
 	{
 		switch (button) {
+			case SCORE_MENU_PLAY_BUTTON:
+				GameController.EndCurrentState();
+				GameController.StartGame();
+				break;
 			case SCORE_MENU_RETURN_BUTTON:
 				GameController.EndCurrentState();
 				break;
