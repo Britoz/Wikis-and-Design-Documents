@@ -143,6 +143,12 @@ static class HighScoreController
 			}
 		}
 	}
+	
+	public static void DrawPlayAgainButton()
+	{
+		SwinGame.FillRectangle(Color.Black, 500, 450, 100,30);
+		SwinGame.DrawText("Play Again", Color.White, 510,460);
+	}
 
 	/// <summary>
 	/// Handles the user input during the top score screen.
@@ -186,7 +192,10 @@ static class HighScoreController
 				SwinGame.ProcessEvents();
 
 				UtilityFunctions.DrawBackground();
+				
 				DrawHighScores();
+				DrawPlayAgainButton();
+				
 				SwinGame.DrawText("Name: ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
 				SwinGame.RefreshScreen();
 			}
@@ -196,13 +205,11 @@ static class HighScoreController
 			if (s.Name.Length < 3) {
 				s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
 			}
+			
 
 			_Scores.RemoveAt(_Scores.Count - 1);
 			_Scores.Add(s);
 			_Scores.Sort();
-
-            SaveScores();
-
 			GameController.EndCurrentState();
 		}
 	}
