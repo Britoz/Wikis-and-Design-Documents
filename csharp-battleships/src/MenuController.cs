@@ -38,6 +38,9 @@ static class MenuController
 			"EASY",
 			"MEDIUM",
 			"HARD"
+		},
+		new string[] {
+			"RETURN",
 		}
 
 	};
@@ -53,6 +56,10 @@ static class MenuController
 	private const int GAME_MENU = 1;
 
 	private const int SETUP_MENU = 2;
+
+	private const int SCORE_MENU = 3;
+	private const int SCORE_MENU_RETURN_BUTTON = 0;
+
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
 	private const int MAIN_MENU_TOP_SCORES_BUTTON = 2;
@@ -101,6 +108,12 @@ static class MenuController
 	{
 		HandleMenuInput(GAME_MENU, 0, 0);
 	}
+
+	public static void HandleScoreMenuInput()
+	{
+		HandleMenuInput(SCORE_MENU, 0, 0);
+	}
+
 
 	/// <summary>
 	/// Handles input for the specified menu.
@@ -252,6 +265,9 @@ static class MenuController
 			case GAME_MENU:
 				PerformGameMenuAction(button);
 				break;
+			case SCORE_MENU:
+				PerformScoreMenuAction(button);
+				break;
 		}
 	}
 
@@ -316,6 +332,15 @@ static class MenuController
 				break;
 			case GAME_MENU_QUIT_BUTTON:
 				GameController.AddNewState(GameState.Quitting);
+				break;
+		}
+	}
+
+	private static void PerformScoreMenuAction(int button)
+	{
+		switch (button) {
+			case SCORE_MENU_RETURN_BUTTON:
+				GameController.EndCurrentState();
 				break;
 		}
 	}
