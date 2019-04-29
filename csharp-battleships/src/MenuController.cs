@@ -312,14 +312,17 @@ static class MenuController
 	{
 		switch (button) {
 			case SETUP_MENU_EASY_BUTTON:
-				GameController.SetDifficulty(AIOption.Easy);
+                GameController.SetDifficulty(AIOption.Easy);
+                _menuStructure[0][1] = "Easy";
 				break;
 			case SETUP_MENU_MEDIUM_BUTTON:
 				GameController.SetDifficulty(AIOption.Medium);
-				break;
+                _menuStructure[0][1] = "Medium";
+                break;
 			case SETUP_MENU_HARD_BUTTON:
 				GameController.SetDifficulty(AIOption.Hard);
-				break;
+                _menuStructure[0][1] = "Hard";
+                break;
 		}
 		//Always end state - handles exit button as well
 		GameController.EndCurrentState();
