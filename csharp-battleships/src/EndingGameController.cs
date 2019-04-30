@@ -36,11 +36,12 @@ static class EndingGameController
 	/// </summary>
 	public static void HandleEndOfGameInput()
 	{
-
-		if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.vk_RETURN) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
-			HighScoreController.ReadHighScore(GameController.HumanPlayer.Score);
-			GameController.EndCurrentState();
-		}
-	}
+        HighScoreController.ReadHighScore(GameController.HumanPlayer.Score);
+        
+        if (SwinGame.KeyTyped(KeyCode.vk_RETURN) || SwinGame.KeyTyped(KeyCode.vk_ESCAPE)) {
+            GameController.EndCurrentState();
+            GameController.AddNewState(GameState.ViewingEndHighScores);
+        }
+    }
 
 }

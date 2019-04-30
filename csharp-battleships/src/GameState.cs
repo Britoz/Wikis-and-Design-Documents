@@ -48,8 +48,14 @@ public enum GameState
 	/// </summary>
 	EndingGame,
 
-	/// <summary>
-	/// The player has quit. Show ending credits and terminate the game
-	/// </summary>
-	Quitting
+    /// <summary>
+    /// The player is looking at the high scores after saving
+    /// </summary>
+
+    ViewingEndHighScores,
+
+    /// <summary>
+    /// The player has quit. Show ending credits and terminate the game
+    /// </summary>
+    Quitting
 }

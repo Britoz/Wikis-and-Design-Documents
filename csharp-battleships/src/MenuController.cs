@@ -42,7 +42,10 @@ static class MenuController
 		new string[] {
 			"PLAY",
 			"RETURN"
-		}
+		},
+        new string[] {
+            "PLAY AGAIN",
+        }
 
 	};
 	private const int MENU_TOP = 575;
@@ -61,6 +64,9 @@ static class MenuController
 	private const int SCORE_MENU = 3;
 	private const int SCORE_MENU_PLAY_BUTTON = 0;
 	private const int SCORE_MENU_RETURN_BUTTON = 1;
+
+    private const int END_GAME_MENU = 4;
+    private const int PLAY_AGAIN_BUTTON = 0;
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
@@ -116,6 +122,10 @@ static class MenuController
 		HandleMenuInput(SCORE_MENU, 0, 0);
 	}
 
+    public static void HandlePlayAgainInput()
+    {
+        HandleMenuInput(END_GAME_MENU, 0, 0);
+    }
 
 	/// <summary>
 	/// Handles input for the specified menu.
@@ -195,6 +205,11 @@ static class MenuController
 	{
 		DrawButtons(SCORE_MENU);
 	}
+
+    public static void DrawPlayAgain()
+    {
+        DrawButtons(END_GAME_MENU);
+    }
 
 	/// <summary>
 	/// Draw the buttons associated with a top level menu.
@@ -279,6 +294,9 @@ static class MenuController
 			case SCORE_MENU:
 				PerformScoreMenuAction(button);
 				break;
+            case END_GAME_MENU:
+                PerformPlayAgainAction(button);
+                break;
 		}
 	}
 
@@ -366,4 +384,18 @@ static class MenuController
 				break;
 		}
 	}
+
+    /// <summary>
+    /// The play again was clicked, perform the button's action.
+    /// </summary>
+    /// <param name="button">the button pressed</param>
+    private static void PerformPlayAgainAction(int button)
+    {
+        switch (button)
+        {
+            case PLAY_AGAIN_BUTTON:
+                GameController.StartGame();
+                break;
+        }
+    }
 }

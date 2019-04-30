@@ -317,9 +317,11 @@ public static class GameController
 				break;
 			case GameState.EndingGame:
 				EndingGameController.HandleEndOfGameInput();
-				//MenuController.HandleScoreMenuInput();
 				break;
-			case GameState.ViewingHighScores:
+            case GameState.ViewingEndHighScores:
+                MenuController.HandlePlayAgainInput();
+                break;
+            case GameState.ViewingHighScores:
 				MenuController.HandleScoreMenuInput();
 				//HighScoreController.HandleHighScoreInput();
 				break;
@@ -357,7 +359,11 @@ public static class GameController
 			case GameState.EndingGame:
 				EndingGameController.DrawEndOfGame();
 				break;
-			case GameState.ViewingHighScores:
+            case GameState.ViewingEndHighScores:
+                HighScoreController.DrawHighScores();
+                MenuController.DrawPlayAgain();
+                break;
+            case GameState.ViewingHighScores:
 				HighScoreController.DrawHighScores();
 				MenuController.DrawScores();
 				break;
