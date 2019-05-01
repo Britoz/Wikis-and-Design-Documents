@@ -176,9 +176,9 @@ static class HighScoreController
 
 				UtilityFunctions.DrawBackground();
 
-				DrawHighScores();
-				
-				SwinGame.DrawText("Name: ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
+                DrawHighScores();
+                
+                SwinGame.DrawText("Name: ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
 				SwinGame.RefreshScreen();
 			}
 
@@ -194,7 +194,7 @@ static class HighScoreController
 			_Scores.Sort();
 
 			SaveScores();
-			GameController.EndCurrentState();
+            GameController.EndCurrentState();
 		}
 	}
 }
