@@ -45,6 +45,7 @@ static class MenuController
 		},
         new string[] {
             "PLAY AGAIN",
+						"MAIN MENU",
         }
 
 	};
@@ -65,8 +66,9 @@ static class MenuController
 	private const int SCORE_MENU_PLAY_BUTTON = 0;
 	private const int SCORE_MENU_RETURN_BUTTON = 1;
 
-    private const int END_GAME_MENU = 4;
-    private const int PLAY_AGAIN_BUTTON = 0;
+  private const int END_GAME_MENU = 4;
+  private const int END_GAME_PLAY_AGAIN_BUTTON = 0;
+	private const int END_GAME_MAIN_MENU_BUTTON = 1;
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
@@ -122,10 +124,10 @@ static class MenuController
 		HandleMenuInput(SCORE_MENU, 0, 0);
 	}
 
-    public static void HandlePlayAgainInput()
-    {
-        HandleMenuInput(END_GAME_MENU, 0, 0);
-    }
+  public static void HandleEndGameInput()
+  {
+      HandleMenuInput(END_GAME_MENU, 0, 0);
+  }
 
 	/// <summary>
 	/// Handles input for the specified menu.
@@ -206,7 +208,7 @@ static class MenuController
 		DrawButtons(SCORE_MENU);
 	}
 
-    public static void DrawPlayAgain()
+    public static void DrawEndGame()
     {
         DrawButtons(END_GAME_MENU);
     }
@@ -294,9 +296,9 @@ static class MenuController
 			case SCORE_MENU:
 				PerformScoreMenuAction(button);
 				break;
-            case END_GAME_MENU:
-                PerformPlayAgainAction(button);
-                break;
+      case END_GAME_MENU:
+        PerformEndGameMenuAction(button);
+        break;
 		}
 	}
 
@@ -389,13 +391,16 @@ static class MenuController
     /// The play again was clicked, perform the button's action.
     /// </summary>
     /// <param name="button">the button pressed</param>
-    private static void PerformPlayAgainAction(int button)
+    private static void PerformEndGameMenuAction(int button)
     {
         switch (button)
         {
-            case PLAY_AGAIN_BUTTON:
+            case END_GAME_PLAY_AGAIN_BUTTON:
                 GameController.StartGame();
                 break;
+						case END_GAME_MAIN_MENU_BUTTON:
+								GameController.EndCurrentState();
+								break;
         }
     }
 }
