@@ -177,7 +177,12 @@ static class HighScoreController
 				UtilityFunctions.DrawBackground();
 
                 DrawHighScores();
-                
+
+                if (SwinGame.WindowCloseRequested())
+                {
+                    break;
+                }
+
                 SwinGame.DrawText("Name: ", Color.White, GameResources.GameFont("Courier"), SCORES_LEFT, ENTRY_TOP);
 				SwinGame.RefreshScreen();
 			}
