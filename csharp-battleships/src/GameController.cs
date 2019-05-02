@@ -311,17 +311,19 @@ public static class GameController
 				break;
 			case GameState.Deploying:
 				DeploymentController.HandleDeploymentInput();
+				MenuController.HandleGameMainMenuInput();
 				break;
 			case GameState.Discovering:
 				DiscoveryController.HandleDiscoveryInput();
+				MenuController.HandleGameMainMenuInput();
 				break;
 			case GameState.EndingGame:
 				EndingGameController.HandleEndOfGameInput();
 				break;
-            case GameState.ViewingEndHighScores:
-                MenuController.HandleEndGameInput();
-                break;
-            case GameState.ViewingHighScores:
+      case GameState.ViewingEndHighScores:
+        MenuController.HandleEndGameInput();
+        break;
+      case GameState.ViewingHighScores:
 				MenuController.HandleScoreMenuInput();
 				//HighScoreController.HandleHighScoreInput();
 				break;
@@ -352,9 +354,11 @@ public static class GameController
 				break;
 			case GameState.Deploying:
 				DeploymentController.DrawDeployment();
+				MenuController.DrawGameMainMenu();
 				break;
 			case GameState.Discovering:
 				DiscoveryController.DrawDiscovery();
+				MenuController.DrawGameMainMenu();
 				break;
 			case GameState.EndingGame:
 				EndingGameController.DrawEndOfGame();

@@ -43,10 +43,13 @@ static class MenuController
 			"PLAY",
 			"RETURN"
 		},
-        new string[] {
-            "PLAY AGAIN",
-						"MAIN MENU",
-        }
+    new string[] {
+      "PLAY AGAIN",
+			"MAIN MENU",
+  	},
+		new string[] {
+			"MENU",
+		}
 
 	};
 	private const int MENU_TOP = 575;
@@ -69,6 +72,9 @@ static class MenuController
   private const int END_GAME_MENU = 4;
   private const int END_GAME_PLAY_AGAIN_BUTTON = 0;
 	private const int END_GAME_MAIN_MENU_BUTTON = 1;
+
+	private const int GAME_MAIN_MENU = 5;
+	private const int GAME_MAIN_MENU_BUTTON = 0;
 
 	private const int MAIN_MENU_PLAY_BUTTON = 0;
 	private const int MAIN_MENU_SETUP_BUTTON = 1;
@@ -129,6 +135,11 @@ static class MenuController
       HandleMenuInput(END_GAME_MENU, 0, 0);
   }
 
+	public static void HandleGameMainMenuInput()
+	{
+		HandleMenuInput(GAME_MAIN_MENU, 0, 0);
+	}
+
 	/// <summary>
 	/// Handles input for the specified menu.
 	/// </summary>
@@ -182,6 +193,14 @@ static class MenuController
 		//SwinGame.DrawText("Paused", Color.White, GameFont("ArialLarge"), 50, 50)
 
 		DrawButtons(GAME_MENU);
+	}
+
+	/// <summary>
+	/// Draws the Game main menu to the screen
+	/// </summary>
+	public static void DrawGameMainMenu()
+	{
+		DrawButtons(GAME_MAIN_MENU);
 	}
 
 	/// <summary>
@@ -299,6 +318,9 @@ static class MenuController
       case END_GAME_MENU:
         PerformEndGameMenuAction(button);
         break;
+			case GAME_MAIN_MENU:
+				PerformGameMainMenuAction(button);
+				break;
 		}
 	}
 
@@ -403,4 +425,18 @@ static class MenuController
 								break;
         }
     }
+
+		/// <summary>
+		/// The main menu, perform the button's action.
+		/// </summary>
+		/// <param name="button">the button pressed</param>
+		private static void PerformGameMainMenuAction(int button)
+		{
+				switch (button)
+				{
+						case GAME_MAIN_MENU_BUTTON:
+							GameController.AddNewState(GameState.ViewingGameMenu);
+							break;
+				}
+		}
 }
